@@ -17,7 +17,7 @@ namespace Microsoft.WindowsAPICodePack.Controls.WindowsForms
     /// <summary>
     /// This class is a wrapper around the Windows Explorer Browser control.
     /// </summary>
-    public sealed class ExplorerBrowser :
+    public class ExplorerBrowser :
         System.Windows.Forms.UserControl,
         Microsoft.WindowsAPICodePack.Controls.IServiceProvider,
         IExplorerPaneVisibility,
@@ -221,6 +221,8 @@ namespace Microsoft.WindowsAPICodePack.Controls.WindowsForms
 
         #region construction
         internal ExplorerBrowserClass explorerBrowserControl;
+
+        public IExplorerBrowser ExplorerBrowserIntfImpl { get { return explorerBrowserControl; } }
 
         // for the IExplorerBrowserEvents Advise call
         internal uint eventsCookie;
@@ -695,7 +697,7 @@ namespace Microsoft.WindowsAPICodePack.Controls.WindowsForms
         /// Gets the IFolderView2 interface from the explorer browser.
         /// </summary>
         /// <returns></returns>
-        internal IFolderView2 GetFolderView2()
+        public IFolderView2 GetFolderView2()
         {
             Guid iid = new Guid(ExplorerBrowserIIDGuid.IFolderView2);
             IntPtr view = IntPtr.Zero;
@@ -816,7 +818,7 @@ namespace Microsoft.WindowsAPICodePack.Controls.WindowsForms
         /// Gets the items in the ExplorerBrowser as an IShellItemArray
         /// </summary>
         /// <returns></returns>
-        internal IShellItemArray GetItemsArray()
+        public IShellItemArray GetItemsArray()
         {
             IShellItemArray iArray = null;
             IFolderView2 iFV2 = GetFolderView2();

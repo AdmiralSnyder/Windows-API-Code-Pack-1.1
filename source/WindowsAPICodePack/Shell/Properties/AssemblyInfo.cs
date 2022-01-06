@@ -19,7 +19,7 @@ using System.Security;
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
-[assembly: InternalsVisibleTo("Microsoft.WindowsAPICodePack.ShellExtensions")]
+//[assembly: InternalsVisibleTo("Microsoft.WindowsAPICodePack.ShellExtensions")]
 
 // Setting ComVisible to false makes the types in this assembly not visible 
 // to COM components.  If you need to access a type in this assembly from 

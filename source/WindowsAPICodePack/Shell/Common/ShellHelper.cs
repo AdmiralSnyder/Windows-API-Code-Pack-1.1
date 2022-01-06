@@ -12,9 +12,9 @@ namespace Microsoft.WindowsAPICodePack.Shell
     /// <summary>
     /// A helper class for Shell Objects
     /// </summary>
-    internal static class ShellHelper
+    public static class ShellHelper
     {
-        internal static string GetParsingName(IShellItem shellItem)
+        public static string GetParsingName(IShellItem shellItem)
         {
             if (shellItem == null) { return null; }
 

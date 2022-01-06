@@ -22,7 +22,7 @@ namespace Microsoft.WindowsAPICodePack.Controls
     }
 
     [Flags]
-    internal enum FolderOptions
+    public enum FolderOptions
     {
         AutoArrange = 0x00000001,
         AbbreviatedNames = 0x00000002,
@@ -58,7 +58,7 @@ namespace Microsoft.WindowsAPICodePack.Controls
         AllowRightToLeftReading = unchecked((int)0x80000000)
     }
 
-    internal enum FolderViewMode
+    public enum FolderViewMode
     {
         Auto = -1,
         First = 1,
@@ -84,14 +84,14 @@ namespace Microsoft.WindowsAPICodePack.Controls
     }
 
     [StructLayout(LayoutKind.Sequential, Pack = 4)]
-    internal class FolderSettings
+    public class FolderSettings
     {
         public FolderViewMode ViewMode;
         public FolderOptions Options;
     }
 
     [Flags]
-    internal enum ExplorerBrowserOptions
+    public enum ExplorerBrowserOptions
     {
         NavigateOnce = 0x00000001,
         ShowFrames = 0x00000002,
@@ -193,7 +193,7 @@ namespace Microsoft.WindowsAPICodePack.Controls
     [ComImport,
      InterfaceType(ComInterfaceType.InterfaceIsIUnknown),
      Guid(ExplorerBrowserIIDGuid.IExplorerBrowser)]
-    internal interface IExplorerBrowser
+    public interface IExplorerBrowser
     {
         /// <summary>
         /// Prepares the browser to be navigated.
@@ -357,7 +357,7 @@ namespace Microsoft.WindowsAPICodePack.Controls
     [ComImport,
      Guid(ExplorerBrowserIIDGuid.IFolderView),
      InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
-    internal interface IFolderView
+    public interface IFolderView
     {
         [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
         void GetCurrentViewMode([Out] out uint pViewMode);
@@ -405,7 +405,7 @@ namespace Microsoft.WindowsAPICodePack.Controls
     [ComImport,
      Guid(ExplorerBrowserIIDGuid.IFolderView2),
      InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
-    internal interface IFolderView2 : IFolderView
+    public interface IFolderView2 : IFolderView
     {
         // IFolderView
         [PreserveSig]

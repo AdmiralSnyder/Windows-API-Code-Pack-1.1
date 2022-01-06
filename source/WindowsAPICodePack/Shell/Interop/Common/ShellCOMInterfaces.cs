@@ -11,7 +11,7 @@ using MS.WindowsAPICodePack.Internal;
 
 namespace Microsoft.WindowsAPICodePack.Shell
 {
-    internal enum SICHINTF
+    public enum SICHINTF
     {
         SICHINT_DISPLAY = 0x00000000,
         SICHINT_CANONICAL = 0x10000000,
@@ -39,7 +39,7 @@ namespace Microsoft.WindowsAPICodePack.Shell
     [ComImport,
     Guid(ShellIIDGuid.IShellItem),
     InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
-    internal interface IShellItem
+    public interface IShellItem
     {
         // Not supported: IBindCtx.
         [PreserveSig]
@@ -150,7 +150,7 @@ namespace Microsoft.WindowsAPICodePack.Shell
     [ComImport,
     Guid(ShellIIDGuid.IShellItemArray),
     InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
-    internal interface IShellItemArray
+    public interface IShellItemArray
     {
         // Not supported: IBindCtx.
         [PreserveSig]
@@ -329,7 +329,7 @@ namespace Microsoft.WindowsAPICodePack.Shell
     Guid(ShellIIDGuid.IShellFolder),
     InterfaceType(ComInterfaceType.InterfaceIsIUnknown),
     ComConversionLoss]
-    internal interface IShellFolder
+    public interface IShellFolder
     {
         [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
         void ParseDisplayName(IntPtr hwnd, [In, MarshalAs(UnmanagedType.Interface)] IBindCtx pbc, [In, MarshalAs(UnmanagedType.LPWStr)] string pszDisplayName, [In, Out] ref uint pchEaten, [Out] IntPtr ppidl, [In, Out] ref uint pdwAttributes);
@@ -425,7 +425,7 @@ namespace Microsoft.WindowsAPICodePack.Shell
     [ComImport,
     Guid(ShellIIDGuid.IEnumIDList),
     InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
-    internal interface IEnumIDList
+    public interface IEnumIDList
     {
         [PreserveSig]
         [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
